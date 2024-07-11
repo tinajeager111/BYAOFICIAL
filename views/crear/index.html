@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>NUEVO</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    </head>
+    <body>
+        
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/dashboard">B Y A </a>
+                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/dashboard">Home</a></li>
+                     
+                    </ul>
+                    <form class="d-flex">
+                       
+                    
+                      
+                      <a style="margin:1%">
+                        <div id="logOut" class="btn btn-outline-dark">
+                            <div class="text-center">
+                                <spam>Salir</spam>
+                            </div>
+                        </div>
+                    </a>
+    
+          
+                    </form>
+                </div>
+            
+            </div>
+        </nav>
+
+
+<div class="bg-dark py-5">
+      
+    <p class="notification"></p>
+    <div class="container-1">
+    <div class="container-form">
+
+  <form id="formulario">
+    <p class="form-title">CREA TU NUEVO PRODUCTO</p>
+
+    <div class="input-container"><label for="nombre"
+      class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Nombre del producto (no la marca)</label>
+        <input type="text" id="nombre" name="NOMBRE" placeholder="Nombre">
+      </div>
+
+     <div class="input-container"><label for="precio"
+      class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Precio en dolares</label>
+       <input id="precio" name="PRECIO" type="text" placeholder="Precio en dolares">
+ 
+   </div>
+   <div class="input-container"><label for="titulo"
+    class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Titulo corto de presentacion</label>
+    <input type="text" name="TITULO" id="titulo" placeholder="Titulo">
+  </div>
+   
+   <div class="input-container"><label for="marca"
+    class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Marca</label>
+       <input type="text" name="MARCA" id="marca" placeholder="Marca del producto">
+     </div>
+
+       <div class="input-container"><label for="descripcion"
+        class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Detalles del producto</label>
+           <input type="text" name="DESCRIPCION" id="descripcion" placeholder="Descripcion">
+         </div>
+
+         
+     <div class="input-container"><label for="id"
+        class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Codigo corto</label>
+           <input type="text" name="CODIGO" id="id" placeholder="Codigo corto para guardar">
+         </div>
+
+         <div class="input-container"><label for="categoria"
+            class="text-white bg-dark text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Seleccione categoria del producto</label>
+           <select class="selectY" name="CATEGORIA" id="categoria">
+            <option value="maquillaje">Producto de maquillaje</option>
+            <option value="skincare">Producto de cuidado de piel</option>
+            <option value="belleza">Articulo de belleza</option>
+           </select>
+            </div>
+   <div class="flex justify-center items-center p-4">
+    <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36">
+      <label for="foto" class="flex flex-col items-center gap-2 cursor-pointer">
+        <div id="svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" class="fill-white stroke-indigo-500" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <title></title>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <span id="file-name" class="text-gray-600 font-medium">Foto del producto</span>
+      </label>
+      <input id="foto" type="file" name="PRODUCTO" class="hidden" />
+      
+    </div>
+    <div  id="remove-file" class="m-2 rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 hidden">
+    
+        <label for="foto" class="flex flex-col items-center gap-2 cursor-pointer">
+          <svg fill="#8071f4" width="36" height="36" viewBox="0 0 24.00 24.00" xmlns="http://www.w3.org/2000/svg" stroke="#8071f4" stroke-width="0.21600000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M5.755,20.283,4,8H20L18.245,20.283A2,2,0,0,1,16.265,22H7.735A2,2,0,0,1,5.755,20.283ZM21,4H16V3a1,1,0,0,0-1-1H9A1,1,0,0,0,8,3V4H3A1,1,0,0,0,3,6H21a1,1,0,0,0,0-2Z"></path></g></svg>
+   
+          <span  class="text-gray-600 font-medium" id="textoDelete"></span>
+        </label>
+    </div>
+    
+</div>
+    
+      <button type="submit" class="submit">
+     Crear producto
+   </button>
+
+
+</form>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<script src="crear.js"  type="module" ></script>
+<script>
+ 
+ const inputFile = document.getElementById('foto');
+  const fileNameSpan = document.getElementById('file-name');
+  const removeFileDiv = document.getElementById('remove-file');
+  const svgIcon = document.querySelector('#pago + label svg');
+const text = document.querySelector("#textoDelete")
+
+  inputFile.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        fileNameSpan.textContent = file.name;
+        removeFileDiv.classList.remove('hidden');
+      text.innerHTML =  "Eliminar" 
+      });
+
+      removeFileDiv.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        inputFile.value = '';
+        fileNameSpan.textContent = 'Foto de producto';
+        removeFileDiv.classList.add('hidden');
+        // Restaurar el icono original
+      })
+  </script>
+    </body>
+
+</html>
+
